@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+
+    <link href="../static/css/utils.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+    .bread_crumb_list{
+        margin-top: 5rem;
+        margin-bottom: 4rem;        
+    }
+    .title-post{
+        font-size: 54px;
+        font-weight: 500;
+        text-align: center;
+    }
+    .info-auth img{
+        width: 86px;
+        height: 86px;
+    }
+    .info-auth .name-auth{
+        font-size: 36px;
+        color: #0D99FF;
+    }
+    .info-auth .checked_icon{
+        height: 36px;
+        width: 36px;
+        background-color: #53a4db;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .info-auth .btn-follow{
+        height: 32px;
+        color: white;
+        border: 1px solid #172FC4;
+        background: #0075FF;
+        border-radius: 13px;
+        border: none;
+    }
+    .info-auth .info-post{
+        color: #1E1E1E;
+        size: 18px;
+    }
+    .content-post{
+        width: 60%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-size: 18px;
+    }
+    .block-action button{
+        height: 83px;
+        flex-grow: 1;
+        border: none;
+        background: #B6B6B6;
+        font-size: 25px;
+    }
+    .block-comment .img-avt{
+        height: 86px;
+        width: 86px;
+    }
+    .y-comment{
+        width: 585px;
+        height: 86px;
+        background: #EDEDED;
+        border: 1px solid #C2C2C2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        margin-left: 1.25rem;
+    }
+    .comment-item .name{
+        font-size: 38px;
+        color: #0D99FF;
+        line-height: 1;
+    }
+    .comment-item .time-cmt{
+        font-size: 20px;
+        color: #0D99FF;
+        line-height: 1;
+        margin-left: 10px;
+    }
+    .comment-item .block-comment-content{
+        min-height: 160px;
+        background: #EDEDED;
+        border: 1px solid #C2C2C2;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0.5rem 1rem 1.5rem 1rem;
+        margin-left: 1.25rem;
+    }
+    .comment-item .comment-content{
+        font-size: 24px;
+        font-weight: 500;
+    }
+    .comment-item{
+        margin-bottom: 1rem;
+    }
+    .btn-see-more-cmt{
+        background: none;
+        border: none;
+        font-size: 27px;
+        font-weight: 700;
+    }
+</style>
+<body>
+    <!-- header -->
+    <div id="header" class="w-100">
+        <div class="top_header">
+            <a href="">Feedback contribution</a>
+            <a href="">App download</a>
+            <a href="">Help</a>
+        </div>
+        <div class="main_header w-100 d-flex align-items-center">
+            <img class="main_logo" src="../static/images/logo/logo_ce_1.png">
+            <div class="btn-group dropend">
+                <button class="category_block d-flex align-items-center bg-transparent border-0 p-0" data-bs-auto-close="outside" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000">
+                            <path d="M144.33-199q-21.83 0-37.08-15.28Q92-229.57 92-252.12q0-21.88 15.25-37.05 15.25-15.16 37.08-15.16h671.34q21.83 0 37.41 15.28 15.59 15.28 15.59 37.17 0 22.55-15.59 37.71Q837.5-199 815.67-199H144.33Zm0-228.67q-21.83 0-37.08-15.28T92-480.12q0-21.88 15.25-37.05 15.25-15.16 37.08-15.16h671.34q21.83 0 37.41 15.28 15.59 15.28 15.59 37.17 0 21.88-15.59 37.05-15.58 15.16-37.41 15.16H144.33Zm0-228q-21.83 0-37.08-15.28T92-708.78q0-21.89 15.25-37.05Q122.5-761 144.33-761h671.34q21.83 0 37.41 15.28 15.59 15.29 15.59 37.17 0 22.55-15.59 37.72-15.58 15.16-37.41 15.16H144.33Z"/>
+                        </svg>                    
+                    </span>
+                    <span style="margin-left: 5px;">Category</span>
+                    <span style="margin-top: 5px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000">
+                            <path d="M480-353.12q-7.46 0-14.17-2.69-6.7-2.68-12.59-8.57l-193.1-193.1q-11.02-11.02-10.68-26.85.33-15.84 11.35-26.86t26.86-11.02q15.83 0 26.85 11.02L480-445.04l166.15-166.15q11.02-11.02 26.52-10.69 15.5.34 26.52 11.36t11.02 26.85q0 15.84-11.02 26.86L506.76-364.38q-5.89 5.89-12.59 8.57-6.71 2.69-14.17 2.69Z"/>
+                        </svg>  
+                    </span>                    
+                </button>
+
+                <ul class="dropdown-menu dropdown-category pt-0">
+                    <li class="header-dd-category">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000">
+                                <path d="M144.33-199q-21.83 0-37.08-15.28Q92-229.57 92-252.12q0-21.88 15.25-37.05 15.25-15.16 37.08-15.16h671.34q21.83 0 37.41 15.28 15.59 15.28 15.59 37.17 0 22.55-15.59 37.71Q837.5-199 815.67-199H144.33Zm0-228.67q-21.83 0-37.08-15.28T92-480.12q0-21.88 15.25-37.05 15.25-15.16 37.08-15.16h671.34q21.83 0 37.41 15.28 15.59 15.28 15.59 37.17 0 21.88-15.59 37.05-15.58 15.16-37.41 15.16H144.33Zm0-228q-21.83 0-37.08-15.28T92-708.78q0-21.89 15.25-37.05Q122.5-761 144.33-761h671.34q21.83 0 37.41 15.28 15.59 15.29 15.59 37.17 0 22.55-15.59 37.72-15.58 15.16-37.41 15.16H144.33Z"/>
+                            </svg>                    
+                        </span>
+                        <span style="margin-left: 5px;">Category</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="input_search_block">
+                <input type="text" class="input_search" placeholder="Find products on Cutting/Edge">
+                <button class="btn_search">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 0 24 24" width="26px" fill="white">
+                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                        <path d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <button class="btn-icon">
+                <img class="w-100 h-100 object-fit-contain" src="../static/images/icon/bell_1.png" alt="">
+            </button>
+            <button class="btn-icon" style="padding: 2px;">
+                <img class="w-100 h-100 object-fit-contain" src="../static/images/icon/chat_2.png" alt="">
+            </button>
+            <button class="d-flex align-items-center p-0 border-0 bg-transparent">
+                <div class="btn-icon me-1">
+                    <img class="w-100 h-100 object-fit-contain" src="../static/images/icon/page_1.png" alt="">
+                </div>
+                <span class="title_icon_style">Post management</span>
+            </button>
+
+            <div class="d-flex align-items-center">
+                <img class="icon_prf_hd me-2" src="../static/images/icon/avt_default.png" alt="">
+                <span class="title_icon_style">User account</span>
+                <span style="margin-top: 5px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000">
+                        <path d="M480-353.12q-7.46 0-14.17-2.69-6.7-2.68-12.59-8.57l-193.1-193.1q-11.02-11.02-10.68-26.85.33-15.84 11.35-26.86t26.86-11.02q15.83 0 26.85 11.02L480-445.04l166.15-166.15q11.02-11.02 26.52-10.69 15.5.34 26.52 11.36t11.02 26.85q0 15.84-11.02 26.86L506.76-364.38q-5.89 5.89-12.59 8.57-6.71 2.69-14.17 2.69Z"/>
+                    </svg>  
+                </span>
+            </div>
+            <button class="btn-post-rv d-flex align-items-center justify-content-center">
+                <span class="me-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="white">
+                        <path d="M189.06-113.3q-31 0-53.38-22.38-22.38-22.38-22.38-53.38v-581.88q0-31.06 22.38-53.49 22.38-22.43 53.38-22.43h297.6q19.02 0 28.53 11.81 9.51 11.81 9.51 25.99 0 14.17-9.66 26.14-9.66 11.98-28.47 11.98H189.06v581.88h581.88v-299.52q0-18.78 11.83-28.33 11.83-9.55 26.02-9.55 14.2 0 26.13 9.55 11.94 9.55 11.94 28.33v299.52q0 31-22.43 53.38Q802-113.3 770.94-113.3H189.06ZM480-480Zm-123.19 85.31v-105.25q0-15.45 6.01-29.44 6.01-14 16.53-24.51l351.51-351.28q11.36-11.35 25.29-16.66 13.93-5.3 28.1-5.3 14.25 0 28.34 5.64 14.09 5.63 25.69 16.99l65.55 66.31q11 11.49 16.77 25.23 5.77 13.73 5.77 27.95 0 14.26-5.55 28.56-5.56 14.3-16.99 25.73L553.89-379.44q-10.51 10.51-24.51 16.57-13.99 6.06-29.44 6.06H394.69q-16 0-26.94-10.94-10.94-10.94-10.94-26.94Zm499.56-390.22-72.04-71.79 72.04 71.79ZM428.74-428.74h72.46l244.17-244.17-36.4-35.97-36.83-35.82-243.4 242.5v73.46Zm280.23-280.14-36.83-35.82 36.83 35.82 36.4 35.97-36.4-35.97Z"/>
+                    </svg>
+                </span>
+                <span class="title_icon_style">Post review</span>
+            </button>
+        </div>
+
+    </div>
+
+    <div id="content_body" class="">
+        <div class="bread_crumb_list"></div>
+        <div class="mb-5">
+            <div class="title-post mb-3">Free Apple cable: USB-C with two black ends</div>
+            <div class="info-auth d-flex ms-5 ps-4">
+                <img src="../static/images/icon/image%2053.png" alt="">
+                <div class="ms-4">
+                    <div class="d-flex align-items-center">
+                        <div class="name-auth">Next Gen</div>
+                        <div class="checked_icon mx-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="white"><path d="m379.33-355.54 346.71-346.33q13.42-13.2 31.69-13.2 18.27 0 31.47 13.24 13.21 13.23 13.21 31.57t-13.21 31.69L410.77-260.36q-13.34 13.2-31.51 13.2-18.16 0-31.36-13.2L170.36-437.9q-13.2-13.4-12.98-31.75.21-18.35 13.45-31.55 13.24-13.21 31.58-13.21 18.34 0 31.69 13.21l145.23 145.66Z"/></svg>
+                        </div>
+                        <button class="btn-follow px-2">+ Follow</button>
+                    </div>
+                    <div class="info-post">June 23, 2024 17:45 Responses: 964</div>
+                </div>
+            </div>
+        </div>
+        <div class="content-post">
+            <img src="../static/images/image%2055.png" alt="" class="w-100">
+            <p>
+                Most Apple double-ended USB-C cables are white. I bought some black yarn and thought it was interesting so I gave it to my friends to get acquainted with. This cable is not very rare, if you have money you can buy it. I like this cable from Apple because it's small, light, thin, simple... and beautiful. Other parties' cables try to make it look bold, but in reality there is no need.
+                @gamega: please comment on your purpose of using this cable. After 3 days, I will choose a lucky comment to send as a gift. Have fun guys.
+            </p>
+            <img src="../static/images/image%2056.png" alt="" class="w-100">
+            <p>
+                Most Apple double-ended USB-C cables are white. I bought some black yarn and thought it was interesting so I gave it to my friends to get acquainted with. This cable is not very rare, if you have money you can buy it. I like this cable from Apple because it's small, light, thin, simple... and beautiful. Other parties' cables try to make it look bold, but in reality there is no need.
+                @gamega: please comment on your purpose of using this cable. After 3 days, I will choose a lucky comment to send as a gift. Have fun guys.
+            </p>
+        </div>
+        <div class="block-action d-flex mt-3 mb-5">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000000"><path d="M479.62-168.23q-11.23 0-22.52-4.06t-19.86-12.69l-49.5-45.23q-115.3-105.66-201.52-203.7Q100-531.95 100-638.46q0-83.25 56.14-139.39Q212.28-834 295.13-834q47.31 0 95.99 23.26 48.67 23.25 88.88 81.67 42.51-58.42 89.71-81.67Q616.9-834 664.87-834q82.85 0 138.99 56.15Q860-721.71 860-638.46q0 107.66-87.98 206.45-87.97 98.78-200.1 201.75l-49.7 45.44q-8.48 8.54-19.82 12.56-11.35 4.03-22.78 4.03Zm-22.44-506.85q-31.64-53.51-72.94-81.09-41.29-27.57-89.11-27.57-62.98 0-103.92 41.15-40.95 41.15-40.95 104.34 0 50.92 31.9 105.99 31.91 55.08 80.16 109.34 48.24 54.25 104.63 105.61 56.38 51.36 104.97 95.54 3.46 3.33 8.08 3.33t8.08-3.33q48.59-43.77 104.97-95.33 56.39-51.57 104.55-106.13 48.17-54.57 80.16-109.65 31.98-55.08 31.98-105.5 0-63.06-41.17-104.21-41.17-41.15-103.77-41.15-48.42 0-89.38 27.37Q534.46-729 502-675.08q-4.26 6.62-10.05 9.85-5.8 3.23-12.49 3.23t-12.69-3.23q-6-3.23-9.59-9.85ZM480-500.64Z"/></svg>
+                <span>like</span>
+            </button>
+            <button style="border-left: 2px solid #595959; border-right: 2px solid #595959;">
+                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000000"><path d="m241.54-260-88.33 88.33q-14.77 14.77-33.99 6.76Q100-172.92 100-193.8v-603.63q0-25.79 18.39-44.18T162.57-860h634.86q25.79 0 44.18 18.39T860-797.43v474.86q0 25.79-18.39 44.18T797.43-260H241.54Zm-21.74-50.26h577.63q4.62 0 8.47-3.84 3.84-3.85 3.84-8.47v-474.86q0-4.62-3.84-8.47-3.85-3.84-8.47-3.84H162.57q-4.62 0-8.47 3.84-3.84 3.85-3.84 8.47v559.48l69.54-72.31Zm-69.54 0v-499.48 499.48Zm124.87-99.33h246.36q10.7 0 17.91-7.25 7.21-7.25 7.21-18t-7.21-17.88q-7.21-7.13-17.91-7.13H275.13q-10.7 0-17.91 7.25-7.22 7.25-7.22 18t7.22 17.88q7.21 7.13 17.91 7.13Zm0-124.87h409.74q10.7 0 17.91-7.25 7.22-7.25 7.22-18t-7.22-17.88q-7.21-7.13-17.91-7.13H275.13q-10.7 0-17.91 7.25-7.22 7.25-7.22 18t7.22 17.88q7.21 7.13 17.91 7.13Zm0-124.87h409.74q10.7 0 17.91-7.25 7.22-7.25 7.22-18t-7.22-17.88q-7.21-7.13-17.91-7.13H275.13q-10.7 0-17.91 7.25-7.22 7.25-7.22 18t7.22 17.88q7.21 7.13 17.91 7.13Z"/></svg>
+                <span>Comment</span>
+            </button>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 0 24 24" width="42px"><path d="M14,5V9C7,10 4,15 3,20C5.5,16.5 9,14.9 14,14.9V19L21,12L14,5M16,9.83L18.17,12L16,14.17V12.9H14C11.93,12.9 10.07,13.28 8.34,13.85C9.74,12.46 11.54,11.37 14.28,11L16,10.73V9.83Z" /></svg>
+                <span>Share</span>
+            </button>
+        </div>
+        <div class="block-comment px-4 ms-5">
+            <div class="block-y-comment d-flex mb-5">
+                <img class="img-avt" src="../static/images/icon/image%2053.png" alt="">
+                <div class="y-comment">Comment</div>
+            </div>
+
+            <div class="comment-item d-flex"></div>
+        </div>
+        <div class="block-see-more-cmt w-100 d-flex justify-content-center mt-4 mb-4">
+            <button class="btn-see-more-cmt ">See More</button>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div id="footer" class="d-flex">
+        <div class="block_footer_1">
+           <span class="title_block_footer">DOWNLOAD APP CUTTING/EDGE</span>
+           <div class="d-flex content_block_1">
+               <div><img class="qr_footer" src="../static/images/qr-code%201.png" alt=""></div>
+               <div>
+                   <div class="d-flex align-items-center">
+                       <img class="lg_block_1_ft" src="../static/images/logo/apple-logo_ft.png" alt="">
+                       <span>DOWNLOAD ON APPSTORE</span>
+                   </div>
+                   <div class="download_info d-flex align-items-center">
+                       <img class="lg_block_1_ft" src="../static/images/logo/google-play_ft.png" alt="">
+                       <span>DOWNLOAD ON GOOGLE PLAY</span>
+                   </div>
+                   <div class="download_info d-flex align-items-center">
+                       <img class="lg_block_1_ft" src="../static/images/logo/huawei_appgallery_ft.png" alt="">
+                       <span>DOWNLOAD ON APP GALLERY</span>
+                   </div>
+               </div>
+           </div>
+        </div>
+        <div class="block_footer_2">
+           <span class="title_block_footer">CUSTOMER SUPPORT</span>
+           <div class="content_ft_bl d-flex flex-column">
+                <div><a href="">Help center</a></div>
+                <div><a href="">Information security and safety</a></div>
+                <div><a href="">Contact support</a></div>
+           </div>
+        </div>
+        <div class="block_footer_3">
+            <span class="title_block_footer">ABOUT CUTTING/EDGE</span>
+            <div class="content_ft_bl d-flex flex-column">
+                <div><a href="">Introduction</a></div>
+                <div><a href="">Operating regulations</a></div>
+                <div><a href="">Privacy policy</a></div>
+                <div><a href="">Dispute resolution</a></div>
+                <div><a href="">Recruitment</a></div>
+                <div><a href="">Media</a></div>
+            </div>
+        </div>
+        <div class="block_footer_4">
+            <span class="title_block_footer">CONNECT WITH</span>
+            <div class="content_ft_bl d-flex flex-column">
+                <div class="plf_connect d-flex">
+                    <a href=""><img src="../static/images/logo/facebook.png" alt=""></a>
+                    <a href=""><img src="../static/images/logo/youtube.png" alt=""></a>
+                    <a href=""><img src="../static/images/logo/linkedin.png" alt=""></a>
+                </div>
+                <div>VERIFIED</div>
+                <div class="vrf_ft"><a href=""><img src="../static/images/logo/logo%203.png" alt=""></a></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/script/utils.js"></script>
+    <script defer>
+
+        var category_tree = ["Forum", "Post"]
+        // --------------------
+        renderBreadCrumbList(category_tree)
+        
+
+        data_comments_ex = [
+            {
+                "avatar_url": "../images/avartar/image 62.png",
+                "name": "Tan",
+                "time": "1 day",
+                "content": "Surely no one has time to read this, right?"
+            },
+            {
+                "avatar_url": "../images/avartar/image 63.png",
+                "name": "Hoa",
+                "time": "1 day",
+                "content": "Did you actually read it?"
+            },
+            {
+                "avatar_url": "../images/avartar/image 61.png",
+                "name": "Khang",
+                "time": "1 day",
+                "content": "Next Gen Number 1"
+            },
+            {
+                "avatar_url": "../images/avartar/image 64.png",
+                "name": "Tu",
+                "time": "1 day",
+                "content": "I think you are a person who has a lot of time"
+            },
+            {
+                "avatar_url": "../images/avartar/image 66.png",
+                "name": "Tu",
+                "time": "1 day",
+                "content": "Hope we pass exe101!"
+            },
+            {
+                "avatar_url": "../images/avartar/image 65.png",
+                "name": "Nam",
+                "time": "1 day",
+                "content": "Thanks for reading this far and have a nice day."
+            },
+        ]
+
+        updateViewComments(data_comments_ex)
+        
+        // add event click see more comment
+        document.querySelector(".btn-see-more-cmt")?.addEventListener("click", function(){
+            // call api get data here
+            // -------------------------
+            let data = data_comments_ex // Replace with data get from backend
+            let end = false // "true" if there is no more data to see more
+
+            updateViewComments(data, end)
+        })
+
+
+
+        function updateViewComments(data_comments, end=false){
+            let html = ""
+            for(let comment of data_comments){
+                html += `
+                    <div class="comment-item d-flex">
+                        <img class="img-avt" src="${comment.avatar_url}" alt="">
+                        <div class="block-comment-content">
+                            <div class="d-flex align-items-end">
+                                <div class="name">${comment.name}</div>
+                                <div class="time-cmt">${comment.time}</div>
+                            </div>
+                            <div class="comment-content">${comment.content}</div>                 
+                        </div>
+                    </div>
+                `
+            }
+            document.querySelector(".block-comment")?.insertAdjacentHTML("beforeend", html)
+
+            if(end){
+                document.querySelector("block-see-more-cmt")?.classList.add("d-none")
+            }
+        }
+    </script>
+</body>
+</html>

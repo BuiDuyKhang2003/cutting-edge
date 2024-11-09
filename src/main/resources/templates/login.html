@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN IN</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+
+    <link href="/css/utils.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+    #header{
+        height: 95px;
+        background-color: var(--background-1);
+        padding-left: 40px;
+    }
+    #sign_in_form{
+        font-size: 19px;
+        display: flex;
+        flex-direction: column;
+        gap: 42px;
+        font-weight: 500;
+    }
+    #sign_in_form .label-form{
+        font-size: 32px;
+    }
+    .height_default{
+        height: 70px;
+    }
+    #sign_in_form input{
+        background: #E6E6E6;
+        border: none;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+    #sign_in_form button{
+        background: var(--background-2);
+        color: white;
+        border: none;
+    }
+    #content_body .other_sign_in{
+        width: 178px;
+        height: 62px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: 15px;
+        gap: 16px;
+        background: #E6E6E6;
+    }
+    #content_body .other_sign_in img{
+        width: 36px;
+        height: 36px;
+    }
+    a{
+        color: inherit;
+        text-decoration: none;
+    }
+</style>
+<body>
+<!-- header -->
+<div id="header" class="w-100 d-flex align-items-center">
+    <img class="main_logo" src="/images/logo/logo_ce_1.png">
+</div>
+
+<div id="content_body" class="d-flex align-items-center justify-content-center">
+    <div style="width: 585px; margin: 40px 0;">
+        <form action="api/auth/signin" id="sign_in_form" method="POST">
+            <label class="label-form">SIGN IN</label>
+            <input class="w-100 height_default" type="text" name="email" placeholder="Insert email">
+            <input class="w-100 height_default" type="password" name="password" placeholder="Insert password">
+            <a href="">Forgot password ?</a>
+            <button id="btn_sign_in" type="submit" class="w-100 height_default">SIGN IN</button>
+        </form>
+        <div class="w-100 d-flex justify-content-center" style="margin: 40px 0;">Or sign in with</div>
+        <div class="d-flex justify-content-between">
+            <a href="">
+                <div class="other_sign_in">
+                    <img src="/images/logo/facebook.png" alt="">
+                    <span>Facebook</span>
+                </div>
+            </a>
+            <a href="">
+                <div class="other_sign_in">
+                    <img src="/images/logo/google%201.png" alt="">
+                    <span>Google</span>
+                </div>
+            </a>
+            <a href="">
+                <div class="other_sign_in">
+                    <img src="/images/logo/apple-logo%201.png" alt="">
+                    <span>Apple ID</span>
+                </div>
+            </a>
+        </div>
+        <div class="w-100 d-flex justify-content-center" style="margin-top: 40px">
+            Don't have account ?
+            <a href="">&nbsp;Sign up</a>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<div id="footer" class="d-flex">
+    <div class="block_footer_1">
+        <span class="title_block_footer">DOWNLOAD APP CUTTING/EDGE</span>
+        <div class="d-flex content_block_1">
+            <div><img class="qr_footer" src="/images/qr-code%201.png" alt=""></div>
+            <div>
+                <div class="d-flex align-items-center">
+                    <img class="lg_block_1_ft" src="/images/logo/apple-logo_ft.png" alt="">
+                    <span>DOWNLOAD ON APPSTORE</span>
+                </div>
+                <div class="download_info d-flex align-items-center">
+                    <img class="lg_block_1_ft" src="/images/logo/google-play_ft.png" alt="">
+                    <span>DOWNLOAD ON GOOGLE PLAY</span>
+                </div>
+                <div class="download_info d-flex align-items-center">
+                    <img class="lg_block_1_ft" src="/images/logo/huawei_appgallery_ft.png" alt="">
+                    <span>DOWNLOAD ON APP GALLERY</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block_footer_2">
+        <span class="title_block_footer">CUSTOMER SUPPORT</span>
+        <div class="content_ft_bl d-flex flex-column">
+            <div><a href="">Help center</a></div>
+            <div><a href="">Information security and safety</a></div>
+            <div><a href="">Contact support</a></div>
+        </div>
+    </div>
+    <div class="block_footer_3">
+        <span class="title_block_footer">ABOUT CUTTING/EDGE</span>
+        <div class="content_ft_bl d-flex flex-column">
+            <div><a href="">Introduction</a></div>
+            <div><a href="">Operating regulations</a></div>
+            <div><a href="">Privacy policy</a></div>
+            <div><a href="">Dispute resolution</a></div>
+            <div><a href="">Recruitment</a></div>
+            <div><a href="">Media</a></div>
+        </div>
+    </div>
+    <div class="block_footer_4">
+        <span class="title_block_footer">CONNECT WITH</span>
+        <div class="content_ft_bl d-flex flex-column">
+            <div class="plf_connect d-flex">
+                <a href=""><img src="/images/logo/facebook.png" alt=""></a>
+                <a href=""><img src="/images/logo/youtube.png" alt=""></a>
+                <a href=""><img src="/images/logo/linkedin.png" alt=""></a>
+            </div>
+            <div>VERIFIED</div>
+            <div class="vrf_ft"><a href=""><img src="/images/logo/logo%203.png" alt=""></a></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelector("#sign_in_form #btn_sign_in").addEventListener("click", async function(e){
+            e.preventDefault();
+
+            console.log("Attempting to sign in");
+
+            // Collect form data
+            const email = document.querySelector("#sign_in_form input[name='email']").value;
+            const password = document.querySelector("#sign_in_form input[name='password']").value;
+
+            // Prepare the data to send
+            const data = { email, password };
+
+            try {
+                // Send a POST request to the /signin API
+                const response = await fetch('/signin', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                // Parse the JSON response
+                const result = await response.json();
+
+                if (response.ok) {
+                    // Handle successful sign-in, e.g., redirect or store token
+                    console.log("Sign-in successful:", result);
+                } else {
+                    // Display the error message
+                    alert(result.message);
+                }
+            } catch (error) {
+                console.error("Sign-in error:", error);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

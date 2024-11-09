@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+
+    <link href="css/utils.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+    .about_block{
+        height: 138px;
+        background-color: var(--background-1);
+        border: 1px solid #D98D00;
+        font-size: 90px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top-right-radius: 14px;
+        border-bottom-right-radius: 14px;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+        user-select: none;
+        width: max-content;
+        padding-left: 6rem;
+        padding-right: 2rem;
+    }
+</style>
+<body>
+<!-- header -->
+<div id="header" class="w-100">
+    <div class="top_header">
+        <a href="">Feedback contribution</a>
+        <a href="">App download</a>
+        <a href="">Help</a>
+    </div>
+    <div class="main_header w-100 d-flex align-items-center">
+        <img class="main_logo" src="images/logo/logo_ce_1.png">
+        <div class="btn-group dropend">
+            <button class="category_block d-flex align-items-center bg-transparent border-0 p-0" data-bs-auto-close="outside" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000">
+                            <path d="M144.33-199q-21.83 0-37.08-15.28Q92-229.57 92-252.12q0-21.88 15.25-37.05 15.25-15.16 37.08-15.16h671.34q21.83 0 37.41 15.28 15.59 15.28 15.59 37.17 0 22.55-15.59 37.71Q837.5-199 815.67-199H144.33Zm0-228.67q-21.83 0-37.08-15.28T92-480.12q0-21.88 15.25-37.05 15.25-15.16 37.08-15.16h671.34q21.83 0 37.41 15.28 15.59 15.28 15.59 37.17 0 21.88-15.59 37.05-15.58 15.16-37.41 15.16H144.33Zm0-228q-21.83 0-37.08-15.28T92-708.78q0-21.89 15.25-37.05Q122.5-761 144.33-761h671.34q21.83 0 37.41 15.28 15.59 15.29 15.59 37.17 0 22.55-15.59 37.72-15.58 15.16-37.41 15.16H144.33Z"/>
+                        </svg>
+                    </span>
+                <span style="margin-left: 5px;">Category</span>
+                <span style="margin-top: 5px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000">
+                            <path d="M480-353.12q-7.46 0-14.17-2.69-6.7-2.68-12.59-8.57l-193.1-193.1q-11.02-11.02-10.68-26.85.33-15.84 11.35-26.86t26.86-11.02q15.83 0 26.85 11.02L480-445.04l166.15-166.15q11.02-11.02 26.52-10.69 15.5.34 26.52 11.36t11.02 26.85q0 15.84-11.02 26.86L506.76-364.38q-5.89 5.89-12.59 8.57-6.71 2.69-14.17 2.69Z"/>
+                        </svg>
+                    </span>
+            </button>
+
+            <ul class="dropdown-menu dropdown-category pt-0">
+                <li class="header-dd-category">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000">
+                                <path d="M144.33-199q-21.83 0-37.08-15.28Q92-229.57 92-252.12q0-21.88 15.25-37.05 15.25-15.16 37.08-15.16h671.34q21.83 0 37.41 15.28 15.59 15.28 15.59 37.17 0 22.55-15.59 37.71Q837.5-199 815.67-199H144.33Zm0-228.67q-21.83 0-37.08-15.28T92-480.12q0-21.88 15.25-37.05 15.25-15.16 37.08-15.16h671.34q21.83 0 37.41 15.28 15.59 15.28 15.59 37.17 0 21.88-15.59 37.05-15.58 15.16-37.41 15.16H144.33Zm0-228q-21.83 0-37.08-15.28T92-708.78q0-21.89 15.25-37.05Q122.5-761 144.33-761h671.34q21.83 0 37.41 15.28 15.59 15.29 15.59 37.17 0 22.55-15.59 37.72-15.58 15.16-37.41 15.16H144.33Z"/>
+                            </svg>
+                        </span>
+                    <span style="margin-left: 5px;">Category</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="input_search_block">
+            <input type="text" class="input_search" placeholder="Find products on Cutting/Edge">
+            <button class="btn_search">
+                <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 0 24 24" width="26px" fill="white">
+                    <path d="M0 0h24v24H0V0z" fill="none"/>
+                    <path d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+            </button>
+        </div>
+
+        <button class="btn-icon">
+            <img class="w-100 h-100 object-fit-contain" src="images/icon/bell_1.png" alt="">
+        </button>
+        <button class="btn-icon" style="padding: 2px;">
+            <img class="w-100 h-100 object-fit-contain" src="images/icon/chat_2.png" alt="">
+        </button>
+        <button class="d-flex align-items-center p-0 border-0 bg-transparent">
+            <div class="btn-icon me-1">
+                <img class="w-100 h-100 object-fit-contain" src="images/icon/page_1.png" alt="">
+            </div>
+            <span class="title_icon_style">Post management</span>
+        </button>
+
+        <div class="d-flex align-items-center">
+            <img class="icon_prf_hd me-2" src="images/icon/avt_default.png" alt="">
+            <span class="title_icon_style">User account</span>
+            <span style="margin-top: 5px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000">
+                        <path d="M480-353.12q-7.46 0-14.17-2.69-6.7-2.68-12.59-8.57l-193.1-193.1q-11.02-11.02-10.68-26.85.33-15.84 11.35-26.86t26.86-11.02q15.83 0 26.85 11.02L480-445.04l166.15-166.15q11.02-11.02 26.52-10.69 15.5.34 26.52 11.36t11.02 26.85q0 15.84-11.02 26.86L506.76-364.38q-5.89 5.89-12.59 8.57-6.71 2.69-14.17 2.69Z"/>
+                    </svg>
+                </span>
+        </div>
+        <button class="btn-post-rv d-flex align-items-center justify-content-center">
+                <span class="me-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="white">
+                        <path d="M189.06-113.3q-31 0-53.38-22.38-22.38-22.38-22.38-53.38v-581.88q0-31.06 22.38-53.49 22.38-22.43 53.38-22.43h297.6q19.02 0 28.53 11.81 9.51 11.81 9.51 25.99 0 14.17-9.66 26.14-9.66 11.98-28.47 11.98H189.06v581.88h581.88v-299.52q0-18.78 11.83-28.33 11.83-9.55 26.02-9.55 14.2 0 26.13 9.55 11.94 9.55 11.94 28.33v299.52q0 31-22.43 53.38Q802-113.3 770.94-113.3H189.06ZM480-480Zm-123.19 85.31v-105.25q0-15.45 6.01-29.44 6.01-14 16.53-24.51l351.51-351.28q11.36-11.35 25.29-16.66 13.93-5.3 28.1-5.3 14.25 0 28.34 5.64 14.09 5.63 25.69 16.99l65.55 66.31q11 11.49 16.77 25.23 5.77 13.73 5.77 27.95 0 14.26-5.55 28.56-5.56 14.3-16.99 25.73L553.89-379.44q-10.51 10.51-24.51 16.57-13.99 6.06-29.44 6.06H394.69q-16 0-26.94-10.94-10.94-10.94-10.94-26.94Zm499.56-390.22-72.04-71.79 72.04 71.79ZM428.74-428.74h72.46l244.17-244.17-36.4-35.97-36.83-35.82-243.4 242.5v73.46Zm280.23-280.14-36.83-35.82 36.83 35.82 36.4 35.97-36.4-35.97Z"/>
+                    </svg>
+                </span>
+            <span class="title_icon_style">Post review</span>
+        </button>
+    </div>
+
+</div>
+
+<div id="content_body" class="">
+    <div class="about_block">
+        About us
+    </div>
+</div>
+
+<script src="script/utils.js"></script>
+</body>
+</html>
