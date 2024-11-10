@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activate Account</title>
+</head>
+<body>
+<div style="max-width: 400px; margin: auto; text-align: center;">
+    <h2>Activate Your Account</h2>
+    <p>Enter the 6-digit code sent to your email to activate your account.</p>
+    <form id="activation_form">
+        <input type="text" name="activation_code" placeholder="Enter code" required>
+        <button type="submit">Activate</button>
+    </form>
+    <div id="activation_message"></div>
+</div>
+
+<script>
+    document.getElementById('activation_form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const code = e.target.elements['activation_code'].value;
+
+        try {
+            const response = await fetch('/api/auth/activate-account?token=' + code, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                alert("Account activated successfully!");
+                window.location.href = "/login.html";  // Redirect to login after activation
+            } else {
+                const errorData = await response.json();
+                document.getElementById('activation_message').innerText = `Error: ${errorData.message}`;
+            }
+        } catch (error) {
+            console.error('Activation failed:', error);
+            document.getElementById('activation_message').innerText = 'An error occurred during activation.';
+        }
+    });
+</script>
+</body>
+</html>

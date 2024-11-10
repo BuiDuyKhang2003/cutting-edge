@@ -99,7 +99,7 @@
         </div>
         <div class="w-100 d-flex justify-content-center" style="margin-top: 40px">
             Don't have account ?
-            <a href="">&nbsp;Sign up</a>
+            <a href="/register">&nbsp;Sign up</a>
         </div>
     </div>
 </div>
@@ -160,44 +160,78 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        document.querySelector("#sign_in_form #btn_sign_in").addEventListener("click", async function(e){
-            e.preventDefault();
+<!--    document.addEventListener("DOMContentLoaded", () => {-->
+<!--        document.querySelector("#sign_in_form #btn_sign_in").addEventListener("click", async function(e){-->
+<!--            e.preventDefault();-->
 
-            console.log("Attempting to sign in");
+<!--            console.log("Attempting to sign in");-->
 
-            // Collect form data
-            const email = document.querySelector("#sign_in_form input[name='email']").value;
-            const password = document.querySelector("#sign_in_form input[name='password']").value;
+<!--            // Collect form data-->
+<!--            const email = document.querySelector("#sign_in_form input[name='email']").value;-->
+<!--            const password = document.querySelector("#sign_in_form input[name='password']").value;-->
 
-            // Prepare the data to send
-            const data = { email, password };
+<!--            // Prepare the data to send-->
+<!--            const data = { email, password };-->
 
-            try {
-                // Send a POST request to the /signin API
-                const response = await fetch('/signin', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
+<!--            try {-->
+<!--                // Send a POST request to the /signin API-->
+<!--                const response = await fetch('/signin', {-->
+<!--                    method: 'POST',-->
+<!--                    headers: {-->
+<!--                        'Content-Type': 'application/json'-->
+<!--                    },-->
+<!--                    body: JSON.stringify(data)-->
+<!--                });-->
 
-                // Parse the JSON response
-                const result = await response.json();
+<!--                // Parse the JSON response-->
+<!--                const result = await response.json();-->
 
-                if (response.ok) {
-                    // Handle successful sign-in, e.g., redirect or store token
-                    console.log("Sign-in successful:", result);
-                } else {
-                    // Display the error message
-                    alert(result.message);
-                }
-            } catch (error) {
-                console.error("Sign-in error:", error);
-            }
+<!--                if (response.ok) {-->
+<!--                    // Handle successful sign-in, e.g., redirect or store token-->
+<!--                    console.log("Sign-in successful:", result);-->
+<!--                } else {-->
+<!--                    // Display the error message-->
+<!--                    alert(result.message);-->
+<!--                }-->
+<!--            } catch (error) {-->
+<!--                console.error("Sign-in error:", error);-->
+<!--            }-->
+<!--        });-->
+<!--    });-->
+document.getElementById("sign_in_form").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const email = document.querySelector("input[name='email']").value;
+    const password = document.querySelector("input[name='password']").value;
+
+    try {
+        const response = await fetch("/api/auth/signin", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password })
         });
-    });
+
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.indexOf("application/json") !== -1) {
+            const data = await response.json();
+            if (response.ok) {
+                // Save the access token in local storage
+                localStorage.setItem("accessToken", data.accessToken);
+
+                // Redirect to home page
+                window.location.href = "/home-page";
+            } else {
+                alert("Login failed: " + (data.message || "Unknown error"));
+            }
+        } else {
+            alert("Unexpected response format. Please check the server response.");
+        }
+    } catch (error) {
+        alert("An error occurred during sign-in: " + error.message);
+    }
+});
+
+
 </script>
 
 </body>

@@ -103,20 +103,26 @@
 
 <div id="content_body" class="d-flex align-items-center justify-content-center">
     <div style="width: 585px; margin: 40px 0;">
-        <form action="" id="sign_in_form">
+        <form id="sign_up_form" method="POST">
             <label class="label-form">SIGN UP</label>
-            <input class="w-100 height_default" type="text" name="name" placeholder="Name">
-            <input class="w-100 height_default" type="text" name="phone_number" placeholder="Insert phone number">
-            <input class="w-100 height_default"type="password" name="password" placeholder="Insert password">
+
+            <input class="w-100 height_default" type="text" name="first_name" placeholder="First Name" required>
+            <input class="w-100 height_default" type="text" name="last_name" placeholder="Last Name" required>
+            <input class="w-100 height_default" type="email" name="email" placeholder="Email" required>
+            <input class="w-100 height_default" type="text" name="address" placeholder="Address" required>
+            <input class="w-100 height_default" type="text" name="phone" placeholder="Phone Number" required>
+            <input class="w-100 height_default" type="password" name="password" placeholder="Password" required>
+
             <div class="checkbox-block d-flex">
-                <div>
-                    <input type="checkbox" class="me-3" id="privacy_policy">
-                </div>
-                <label for="privacy_policy" style="user-select: none;">By Registering, you have read and agreed to Cutting/Edge Terms of Use and Privacy Policy</label>
+                <input type="checkbox" id="privacy_policy" required>
+                <label for="privacy_policy" style="user-select: none;">
+                    By registering, you agree to the Terms of Use and Privacy Policy.
+                </label>
             </div>
 
-            <button id="btn_register" class="w-100 height_default text-dark">REGISTER</button>
+            <button type="button" id="btn_register" class="w-100 height_default text-dark">REGISTER</button>
         </form>
+
         <div class="w-100 d-flex justify-content-center" style="margin: 40px 0;">Or sign in with</div>
         <div class="d-flex justify-content-between">
             <a href="">
@@ -140,7 +146,7 @@
         </div>
         <div class="w-100 d-flex justify-content-center" style="margin-top: 40px">
             Have account ?
-            <a href="">&nbsp;Sign up</a>
+            <a href="/login">&nbsp;Sign in</a>
         </div>
     </div>
 </div>
@@ -202,12 +208,53 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        document.querySelector("#sign_in_form #btn_register").addEventListener("click", function(e){
-            e.preventDefault()
+    document.querySelector("#sign_up_form #btn_register").addEventListener("click", async function (e) {
+        e.preventDefault();
 
-            console.log("onclick register")
-        })
+        const form = document.getElementById('sign_up_form');
+
+        // Validate checkbox
+        if (!document.getElementById('privacy_policy').checked) {
+            alert("Please agree to the terms of use and privacy policy.");
+            return;
+        }
+
+        // Gather form data
+        const formData = {
+            first_name: form['first_name'].value,
+            last_name: form['last_name'].value,
+            email: form['email'].value,
+            address: form['address'].value,
+            phone: form['phone'].value,
+            password: form['password'].value
+        };
+
+        try {
+            const response = await fetch('/api/auth/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                alert(data.message);  // Successfully Registered
+                window.location.href = "/activate-account.html";
+            } else {
+                const errorData = await response.json();
+                // Check if 'error' exists in the response, otherwise show a generic error message
+                const errorMessage = errorData.error || "An error occurred. Please check your input.";
+                alert(`Error: ${errorMessage}`);
+            }
+        } catch (error) {
+            console.error('Registration failed:', error);
+            alert('An error occurred during registration.');
+        }
     });
+});
+
 </script>
 </body>
 </html>

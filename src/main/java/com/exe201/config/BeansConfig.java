@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 import java.util.Arrays;
 
@@ -41,33 +42,34 @@ public class BeansConfig {
         return config.getAuthenticationManager();
     }
 
-    @Bean
-    public CorsFilter corsFilter() {
-        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        final CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials(true);
-        config.setAllowedOrigins(Arrays.asList(
-                "http://localhost:3000",
-                "http://localhost:4000",
-                "http://localhost:8080"
+//    @Bean
+//    public CorsFilter corsFilter() {
+//        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        final CorsConfiguration config = new CorsConfiguration();
+//        config.setAllowCredentials(true);
+//        config.setAllowedOrigins(Arrays.asList(
+//                "http://localhost:3000",
 //                "http://localhost:4000",
-//                "https://kgrill-frontend-lmjn.onrender.com"
-        ));
-        config.setAllowedHeaders(Arrays.asList(
-                HttpHeaders.ORIGIN,
-                HttpHeaders.CONTENT_TYPE,
-                HttpHeaders.ACCEPT,
-                HttpHeaders.AUTHORIZATION
-        ));
-        config.setAllowedMethods(Arrays.asList(
-                "GET",
-                "POST",
-                "DELETE",
-                "PUT",
-                "PATCH"
-        ));
-        source.registerCorsConfiguration("/**", config);
-        return new CorsFilter(source);
-
-    }
+//                "http://localhost:8080",
+//                "https://cutting-edge-mck5.onrender.com"
+////                "http://localhost:4000",
+////                "https://kgrill-frontend-lmjn.onrender.com"
+//        ));
+//        config.setAllowedHeaders(Arrays.asList(
+//                HttpHeaders.ORIGIN,
+//                HttpHeaders.CONTENT_TYPE
+//                HttpHeaders.ACCEPT
+//                HttpHeaders.AUTHORIZATION
+//        ));
+//        config.setAllowedMethods(Arrays.asList(
+//                "GET",
+//                "POST",
+//                "DELETE",
+//                "PUT",
+//                "PATCH"
+//        ));
+//        source.registerCorsConfiguration("/**", config);
+//        return new CorsFilter(source);
+//
+//    }
 }
