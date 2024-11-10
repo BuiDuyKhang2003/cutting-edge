@@ -31,7 +31,7 @@
 
             if (response.ok) {
                 alert("Account activated successfully!");
-                window.location.href = "/login.html";  // Redirect to login after activation
+                window.location.href = "/login";  // Redirect to login after activation
             } else {
                 const errorData = await response.json();
                 document.getElementById('activation_message').innerText = `Error: ${errorData.message}`;

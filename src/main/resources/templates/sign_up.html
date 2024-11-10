@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGN IN</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
 
     <link href="/css/utils.css" rel="stylesheet" type="text/css">
@@ -241,7 +243,8 @@
             if (response.ok) {
                 const data = await response.json();
                 alert(data.message);  // Successfully Registered
-                window.location.href = "/activate-account.html";
+                // Redirect to the activate-account page served by your backend
+                window.location.href = "/activate-account";
             } else {
                 const errorData = await response.json();
                 // Check if 'error' exists in the response, otherwise show a generic error message
