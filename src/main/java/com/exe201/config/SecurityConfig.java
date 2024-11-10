@@ -37,7 +37,7 @@ public class SecurityConfig {
                 .cors(withDefaults())
                 .authorizeHttpRequests(request ->
                                 request.requestMatchers("/swagger-ui/", "/swagger-ui/**", "/v3/api-docs/**", "/api/auth/**",
-                                "/login", "/", "/register", "/register/**", "/css/**", "/images/**", "/script/**", "/home-page",
+                                "/login", "/**", "/register", "/register/**", "/css/**", "/images/**", "/script/**", "/home-page",
                                                 "/premium-subscription","/payment-success", "/payment-cancel", "/create-payment-link", "/activate-account").permitAll()
 //                                .requestMatchers("/premium-subscription","/payment-success", "/payment-cancel"
 //                                ).hasAnyAuthority("USER","ADMIN").anyRequest().authenticated()

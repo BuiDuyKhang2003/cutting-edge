@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
 
-    <link href="../static/css/utils.css" rel="stylesheet" type="text/css">
+    <link href="/css/utils.css" rel="stylesheet" type="text/css">
 </head>
 <style>
     .item_menu{
@@ -131,28 +131,36 @@
             <a href="">Help</a>
         </div>
         <div class="main_header w-100 d-flex align-items-center">
-            <img class="main_logo" src="../static/images/logo/logo_ce_1.png">
+            <a href="/home-page">
+                <img class="main_logo" src="/images/logo/logo_ce_1.png">
+            </a>
             <div class="btn-group dropend">
-                <button class="category_block d-flex align-items-center bg-transparent border-0 p-0" data-bs-auto-close="outside" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                <a href="/category" class="category_block d-flex align-items-center bg-transparent border-0 p-0" data-bs-auto-close="outside" >
+                    <!--                   type="button" data-bs-toggle="dropdown" aria-expanded="true">-->
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000">
                             <path d="M144.33-199q-21.83 0-37.08-15.28Q92-229.57 92-252.12q0-21.88 15.25-37.05 15.25-15.16 37.08-15.16h671.34q21.83 0 37.41 15.28 15.59 15.28 15.59 37.17 0 22.55-15.59 37.71Q837.5-199 815.67-199H144.33Zm0-228.67q-21.83 0-37.08-15.28T92-480.12q0-21.88 15.25-37.05 15.25-15.16 37.08-15.16h671.34q21.83 0 37.41 15.28 15.59 15.28 15.59 37.17 0 21.88-15.59 37.05-15.58 15.16-37.41 15.16H144.33Zm0-228q-21.83 0-37.08-15.28T92-708.78q0-21.89 15.25-37.05Q122.5-761 144.33-761h671.34q21.83 0 37.41 15.28 15.59 15.29 15.59 37.17 0 22.55-15.59 37.72-15.58 15.16-37.41 15.16H144.33Z"/>
-                        </svg>                    
+                        </svg>
                     </span>
                     <span style="margin-left: 5px;">Category</span>
                     <span style="margin-top: 5px;">
                         <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000">
                             <path d="M480-353.12q-7.46 0-14.17-2.69-6.7-2.68-12.59-8.57l-193.1-193.1q-11.02-11.02-10.68-26.85.33-15.84 11.35-26.86t26.86-11.02q15.83 0 26.85 11.02L480-445.04l166.15-166.15q11.02-11.02 26.52-10.69 15.5.34 26.52 11.36t11.02 26.85q0 15.84-11.02 26.86L506.76-364.38q-5.89 5.89-12.59 8.57-6.71 2.69-14.17 2.69Z"/>
-                        </svg>  
-                    </span>                    
-                </button>
+                        </svg>
+                    </span>
+                </a>
+                <a href="/premium-subscription" class="btn-subscribe d-flex align-items-center ms-3">
+                    <button class="btn btn-primary">
+                        Subscribe
+                    </button>
+                </a>
 
                 <ul class="dropdown-menu dropdown-category pt-0">
                     <li class="header-dd-category">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000">
                                 <path d="M144.33-199q-21.83 0-37.08-15.28Q92-229.57 92-252.12q0-21.88 15.25-37.05 15.25-15.16 37.08-15.16h671.34q21.83 0 37.41 15.28 15.59 15.28 15.59 37.17 0 22.55-15.59 37.71Q837.5-199 815.67-199H144.33Zm0-228.67q-21.83 0-37.08-15.28T92-480.12q0-21.88 15.25-37.05 15.25-15.16 37.08-15.16h671.34q21.83 0 37.41 15.28 15.59 15.28 15.59 37.17 0 21.88-15.59 37.05-15.58 15.16-37.41 15.16H144.33Zm0-228q-21.83 0-37.08-15.28T92-708.78q0-21.89 15.25-37.05Q122.5-761 144.33-761h671.34q21.83 0 37.41 15.28 15.59 15.29 15.59 37.17 0 22.55-15.59 37.72-15.58 15.16-37.41 15.16H144.33Z"/>
-                            </svg>                    
+                            </svg>
                         </span>
                         <span style="margin-left: 5px;">Category</span>
                     </li>
@@ -170,35 +178,35 @@
             </div>
 
             <button class="btn-icon">
-                <img class="w-100 h-100 object-fit-contain" src="../static/images/icon/bell_1.png" alt="">
+                <img class="w-100 h-100 object-fit-contain" src="/images/icon/bell_1.png" alt="">
             </button>
             <button class="btn-icon" style="padding: 2px;">
-                <img class="w-100 h-100 object-fit-contain" src="../static/images/icon/chat_2.png" alt="">
+                <img class="w-100 h-100 object-fit-contain" src="/images/icon/chat_2.png" alt="">
             </button>
-            <button class="d-flex align-items-center p-0 border-0 bg-transparent">
-                <div class="btn-icon me-1">
-                    <img class="w-100 h-100 object-fit-contain" src="../static/images/icon/page_1.png" alt="">
-                </div>
-                <span class="title_icon_style">Post management</span>
-            </button>
+            <!--        <button class="d-flex align-items-center p-0 border-0 bg-transparent">-->
+            <!--            <div class="btn-icon me-1">-->
+            <!--                <img class="w-100 h-100 object-fit-contain" src="/images/icon/page_1.png" alt="">-->
+            <!--            </div>-->
+            <!--            <span class="title_icon_style">Post management</span>-->
+            <!--        </button>-->
 
             <div class="d-flex align-items-center">
-                <img class="icon_prf_hd me-2" src="../static/images/icon/avt_default.png" alt="">
+                <img class="icon_prf_hd me-2" src="/images/icon/avt_default.png" alt="">
                 <span class="title_icon_style">User account</span>
                 <span style="margin-top: 5px;">
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000">
                         <path d="M480-353.12q-7.46 0-14.17-2.69-6.7-2.68-12.59-8.57l-193.1-193.1q-11.02-11.02-10.68-26.85.33-15.84 11.35-26.86t26.86-11.02q15.83 0 26.85 11.02L480-445.04l166.15-166.15q11.02-11.02 26.52-10.69 15.5.34 26.52 11.36t11.02 26.85q0 15.84-11.02 26.86L506.76-364.38q-5.89 5.89-12.59 8.57-6.71 2.69-14.17 2.69Z"/>
-                    </svg>  
+                    </svg>
                 </span>
             </div>
-            <button class="btn-post-rv d-flex align-items-center justify-content-center">
+            <a href="/post" class="btn-post-rv d-flex align-items-center justify-content-center">
                 <span class="me-3">
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="white">
                         <path d="M189.06-113.3q-31 0-53.38-22.38-22.38-22.38-22.38-53.38v-581.88q0-31.06 22.38-53.49 22.38-22.43 53.38-22.43h297.6q19.02 0 28.53 11.81 9.51 11.81 9.51 25.99 0 14.17-9.66 26.14-9.66 11.98-28.47 11.98H189.06v581.88h581.88v-299.52q0-18.78 11.83-28.33 11.83-9.55 26.02-9.55 14.2 0 26.13 9.55 11.94 9.55 11.94 28.33v299.52q0 31-22.43 53.38Q802-113.3 770.94-113.3H189.06ZM480-480Zm-123.19 85.31v-105.25q0-15.45 6.01-29.44 6.01-14 16.53-24.51l351.51-351.28q11.36-11.35 25.29-16.66 13.93-5.3 28.1-5.3 14.25 0 28.34 5.64 14.09 5.63 25.69 16.99l65.55 66.31q11 11.49 16.77 25.23 5.77 13.73 5.77 27.95 0 14.26-5.55 28.56-5.56 14.3-16.99 25.73L553.89-379.44q-10.51 10.51-24.51 16.57-13.99 6.06-29.44 6.06H394.69q-16 0-26.94-10.94-10.94-10.94-10.94-26.94Zm499.56-390.22-72.04-71.79 72.04 71.79ZM428.74-428.74h72.46l244.17-244.17-36.4-35.97-36.83-35.82-243.4 242.5v73.46Zm280.23-280.14-36.83-35.82 36.83 35.82 36.4 35.97-36.4-35.97Z"/>
                     </svg>
                 </span>
                 <span class="title_icon_style">Post review</span>
-            </button>
+            </a>
         </div>
 
     </div>
@@ -207,37 +215,37 @@
         <div class="bread_crumb_list"></div>
         <div class="d-flex mx-5 align-items-center" style="margin-top: 4rem; margin-bottom: 4rem;">
             <div class="item_menu">
-                <img src="../static/images/home/image%2012.png" alt="">
+                <img src="/images/home/image 12.png" alt="">
                 <div class="title_menu">Laptop</div>
             </div>
 
             <div class="company-block px-5" style="margin-left: 3rem; margin-right: 5rem;">
                 <div class="company-item">
-                    <img src="../static/images/logo/apple-logo%201.png" alt="">
+                    <img src="/images/logo/apple-logo 1.png" alt="">
                     <div class="company-name">Apple</div>
                 </div>
                 <div class="company-item">
-                    <img src="../static/images/logo/asus.png" alt="">
+                    <img src="/images/logo/asus.png" alt="">
                     <div class="company-name">Asus</div>
                 </div>
                 <div class="company-item">
-                    <img src="../static/images/logo/HP.png" alt="">
+                    <img src="/images/logo/HP.png" alt="">
                     <div class="company-name">HP</div>
                 </div>
                 <div class="company-item">
-                    <img src="../static/images/logo/Dell.png" alt="">
+                    <img src="/images/logo/Dell.png" alt="">
                     <div class="company-name">Dell</div>
                 </div>
                 <div class="company-item">
-                    <img src="../static/images/logo/lenovo.png" alt="">
+                    <img src="/images/logo/lenovo.png" alt="">
                     <div class="company-name">Lenovo</div>
                 </div>
                 <div class="company-item">
-                    <img src="../static/images/logo/acer.png" alt="">
+                    <img src="/images/logo/acer.png" alt="">
                     <div class="company-name">Acer</div>
                 </div>
                 <div class="company-item">
-                    <img src="../static/images/logo/samsung.png" alt="">
+                    <img src="/images/logo/samsung.png" alt="">
                     <div class="company-name">Samsung</div>
                 </div>
             </div>
@@ -269,18 +277,18 @@
         <div class="block_footer_1">
            <span class="title_block_footer">DOWNLOAD APP CUTTING/EDGE</span>
            <div class="d-flex content_block_1">
-               <div><img class="qr_footer" src="../static/images/qr-code%201.png" alt=""></div>
+               <div><img class="qr_footer" src="/images/qr-code 1.png" alt=""></div>
                <div>
                    <div class="d-flex align-items-center">
-                       <img class="lg_block_1_ft" src="../static/images/logo/apple-logo_ft.png" alt="">
+                       <img class="lg_block_1_ft" src="/images/logo/apple-logo_ft.png" alt="">
                        <span>DOWNLOAD ON APPSTORE</span>
                    </div>
                    <div class="download_info d-flex align-items-center">
-                       <img class="lg_block_1_ft" src="../static/images/logo/google-play_ft.png" alt="">
+                       <img class="lg_block_1_ft" src="/images/logo/google-play_ft.png" alt="">
                        <span>DOWNLOAD ON GOOGLE PLAY</span>
                    </div>
                    <div class="download_info d-flex align-items-center">
-                       <img class="lg_block_1_ft" src="../static/images/logo/huawei_appgallery_ft.png" alt="">
+                       <img class="lg_block_1_ft" src="/images/logo/huawei_appgallery_ft.png" alt="">
                        <span>DOWNLOAD ON APP GALLERY</span>
                    </div>
                </div>
@@ -309,17 +317,17 @@
             <span class="title_block_footer">CONNECT WITH</span>
             <div class="content_ft_bl d-flex flex-column">
                 <div class="plf_connect d-flex">
-                    <a href=""><img src="../static/images/logo/facebook.png" alt=""></a>
-                    <a href=""><img src="../static/images/logo/youtube.png" alt=""></a>
-                    <a href=""><img src="../static/images/logo/linkedin.png" alt=""></a>
+                    <a href=""><img src="/images/logo/facebook.png" alt=""></a>
+                    <a href=""><img src="/images/logo/youtube.png" alt=""></a>
+                    <a href=""><img src="/images/logo/linkedin.png" alt=""></a>
                 </div>
                 <div>VERIFIED</div>
-                <div class="vrf_ft"><a href=""><img src="../static/images/logo/logo%203.png" alt=""></a></div>
+                <div class="vrf_ft"><a href=""><img src="/images/logo/logo 3.png" alt=""></a></div>
             </div>
         </div>
     </div>
 
-    <script src="../static/script/utils.js"></script>
+    <script src="/script/utils.js"></script>
     <script defer>
 
         var category_tree = ["Category", "Laptop"]
